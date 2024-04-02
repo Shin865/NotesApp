@@ -1,0 +1,203 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-family: "Open Sans", sans-serif;
+}
+
+input,
+button {
+  font-size: 16px;
+  background: gainsboro;
+  cursor: pointer;
+}
+
+.head_bar {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #363737;
+  color: white;
+}
+
+main {
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.note_shelf {
+  margin: 16px 0 0 0;
+  border: 1px solid black;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.note_shelf > h2 {
+  color: #363737;
+}
+
+.note-list {
+  margin-block: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+  row-gap: 32px;
+  margin-bottom: 100px;
+}
+
+.note-item {
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 16px;
+
+  overflow: hidden;
+  transition: all 150ms ease-in;
+}
+
+.note-item h2 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.archived-button {
+  background: url("../assets/square-check.png");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.archived-button:hover {
+  background: url("../assets/square-filled.png");
+  background-size: contain;
+}
+
+.trash-button {
+  background: url("../assets/trash.png");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.trash-button:hover {
+  background: url("../assets/trash-filled.png");
+  background-size: contain;
+}
+
+.non-archived-button {
+  background: url("../assets/undo.png");
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.non-archived-button:hover {
+  background: url("../assets/undo_filled.png");
+  background-size: contain;
+}
+
+.sort {
+  background-color: #363737;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 32px;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#sortNotes {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  color: 363737;
+  width: 100%;
+  padding: 12px 8px;
+  margin-top: 20px;
+  background-color: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 4px;
+  border: 0px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#sortNotes > option {
+  color: #211951;
+  background-color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .note-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  background-color: #363737;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  display: none;
+  z-index: 9999;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid#363737;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

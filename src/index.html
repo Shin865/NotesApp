@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Notes Apps</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+  </head>
+  <body>
+    <notes-header></notes-header>
+    <main>
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+      </div>
+      <notes-form></notes-form>
+      <section class="sort">
+        <h2>Pilih Notes</h2>
+        <select id="sortNotes">
+          <option value="non-archived">Non Archived</option>
+          <option value="Archived">Archived</option>
+        </select>
+      </section>
+      <notes-list></notes-list>
+    </main>
+    <notes-footer></notes-footer>
+  </body>
+</html>
